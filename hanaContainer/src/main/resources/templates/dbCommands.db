@@ -1,0 +1,23 @@
+create column table vendor(
+	id varchar(80),
+	firstname nvarchar(80),
+	lastname nvarchar(60),
+	companyname nvarchar(120),
+	website nvarchar(65),
+	email nvarchar(80),
+	status nvarchar(10),
+	gstNo nvarchar(32),
+	primary key(id)
+);
+
+
+INSERT INTO VENDOR VALUES(
+	'1',
+	'Srinivas',
+	'Vasamsetti',
+	'General Datatech',
+	'www.gdt.com',
+	'srinivas.vasamsetti@gdt.com',
+	'Active',
+	'GSTN123433'
+)

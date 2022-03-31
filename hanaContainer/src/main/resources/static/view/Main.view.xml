@@ -1,0 +1,85 @@
+
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:t="sap.ui.table" 
+xmlns:f="sap.ui.layout.form"
+xmlns:l="sap.ui.layout"
+xmlns:core="sap.ui.core"
+controllerName="srini.controller.Main">
+   <Page title="Welcome">
+      <Button text="load Data" press="handleLoadData" />
+      <f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Vendor Information"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Company" />
+				<Input id="idCompany" value="{/postPayload/companyName}" />
+				<Label text="First/last Name" />
+				<Input value="{/postPayload/firstName}">
+				</Input>
+				<Input value="{/postPayload/lastName}">
+					<layoutData>
+						<l:GridData span="XL2 L2 M2 S4" />
+					</layoutData>
+				</Input>
+				
+				<Label text="Website" />
+				<Input value="{/postPayload/website}" />
+				<Label text="Email" />
+				<Input value="{/postPayload/email}" />
+				<Label text="GSTNo" />
+				<Input value="{/postPayload/gstNo}" />
+			</f:content>
+		</f:SimpleForm>
+		
+      <t:Table id="idTable">
+         <t:columns>
+            <t:Column>
+               <t:label>
+                  <Text text="Company Name" />
+               </t:label>
+               <t:template>
+                  <Text text="{companyName}" />
+               </t:template>
+            </t:Column>
+            <t:Column>
+               <t:label>
+                  <Text text="Name" />
+               </t:label>
+               <t:template>
+                  <Text text="{firstName} {lastName}" />
+               </t:template>
+            </t:Column>
+            <t:Column>
+               <t:label>
+                  <Text text="Email" />
+               </t:label>
+               <t:template>
+                  <Text text="{email}" />
+               </t:template>
+            </t:Column>
+         </t:columns>
+      </t:Table>
+      <footer>
+<Toolbar>
+<ToolbarSpacer/>
+<Button text="save" type="Accept" press="handleSave"/>
+
+</Toolbar>
+     	
+
+      </footer>
+   </Page>
+</mvc:View>
